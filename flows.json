@@ -269,51 +269,6 @@
         "wires": []
     },
     {
-        "id": "1fe6da401c977e3b",
-        "type": "function",
-        "z": "e1ac1f3acef1c292",
-        "name": "RPM + Estado",
-        "func": "// generar un numero entero random entre mix y max\nfunction genRndInt(min, max) { \n    return Math.floor(Math.random() * (max - min + 1) + min);\n}\n\n\nlet bomba_estado = 0;\nlet bomba_rpm = genRndInt(1500, 1800);\n\nif (msg.payload){\n    msg.payload = {\n        bomba_estado: true,\n        bomba_rpm: bomba_rpm\n    };\n}\nelse{\n    msg.payload = {\n        bomba_estado: false,\n        bomba_rpm: 0\n    };\n}\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 500,
-        "y": 340,
-        "wires": [
-            [
-                "45e1429c548623de"
-            ]
-        ]
-    },
-    {
-        "id": "45e1429c548623de",
-        "type": "change",
-        "z": "e1ac1f3acef1c292",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.bomba_estado",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 700,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "ca58f5abdab8c12f",
         "type": "function",
         "z": "e1ac1f3acef1c292",
