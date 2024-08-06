@@ -1,0 +1,12 @@
+{
+    "name": "NR-TP-M5",
+    "description": "Trabajo práctico del Módulo 5 del curso de nodeRED",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}
