@@ -184,7 +184,7 @@
         "showBorder": true,
         "showGlow": true,
         "x": 870,
-        "y": 120,
+        "y": 140,
         "wires": []
     },
     {
@@ -205,7 +205,7 @@
         "color": "#10387a",
         "className": "",
         "x": 880,
-        "y": 300,
+        "y": 280,
         "wires": []
     },
     {
