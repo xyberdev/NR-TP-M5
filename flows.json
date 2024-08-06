@@ -183,7 +183,7 @@
         "shape": "circle",
         "showBorder": true,
         "showGlow": true,
-        "x": 870,
+        "x": 890,
         "y": 200,
         "wires": []
     },
