@@ -1,1 +1,286 @@
-[]
+[
+    {
+        "id": "e1ac1f3acef1c292",
+        "type": "tab",
+        "label": "Control Bomba",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d53b6752ccb91e98",
+        "type": "ui-base",
+        "name": "Control Central IngeLearn",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "showPageTitle": true,
+        "navigationStyle": "default",
+        "titleBarStyle": "default"
+    },
+    {
+        "id": "8bbee4389d6f5070",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "cce387512c68b8c7",
+        "type": "ui-page",
+        "name": "Control Central",
+        "ui": "d53b6752ccb91e98",
+        "path": "/control-bomba",
+        "icon": "pump",
+        "layout": "notebook",
+        "theme": "8bbee4389d6f5070",
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "77648ce9b3d3368a",
+        "type": "ui-group",
+        "name": "Control Bomba",
+        "page": "cce387512c68b8c7",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "e55e6490b47f0b0d",
+        "type": "ui-button",
+        "z": "e1ac1f3acef1c292",
+        "group": "77648ce9b3d3368a",
+        "name": "btnArrancar",
+        "label": "Arrancar",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "arrow-left-drop-circle-outline",
+        "iconPosition": "left",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "1fe6da401c977e3b"
+            ]
+        ]
+    },
+    {
+        "id": "9803c35991892fec",
+        "type": "ui-button",
+        "z": "e1ac1f3acef1c292",
+        "group": "77648ce9b3d3368a",
+        "name": "btnDetener",
+        "label": "Detener",
+        "order": 5,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "stop-circle-outline",
+        "iconPosition": "left",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "x": 170,
+        "y": 240,
+        "wires": [
+            [
+                "1fe6da401c977e3b"
+            ]
+        ]
+    },
+    {
+        "id": "6fd3c958e7f8e1ec",
+        "type": "ui-template",
+        "z": "e1ac1f3acef1c292",
+        "group": "77648ce9b3d3368a",
+        "page": "",
+        "ui": "",
+        "name": "pic bomba",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<style>\n    .container{\n        display: flex;\n        justify-content: center;\n    }\n    .bomba{\n        max-width: 100%;\n        max-height: 35vh;\n        margin-top: -20px;\n    }\n</style>\n<div class=\"container\">\n    <img src=\"/img/bomba.png\" class=\"bomba\" />\n</div>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 410,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dc59acc05ae7f704",
+        "type": "ui-led",
+        "z": "e1ac1f3acef1c292",
+        "name": "",
+        "group": "77648ce9b3d3368a",
+        "order": 1,
+        "width": "2",
+        "height": "2",
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#cfcfcf"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 870,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7e405a71d9dd9e02",
+        "type": "ui-text",
+        "z": "e1ac1f3acef1c292",
+        "group": "77648ce9b3d3368a",
+        "order": 3,
+        "width": "6",
+        "height": "1",
+        "name": "lblRPM",
+        "label": "RPM:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "style": true,
+        "font": "Arial Black,Arial Black,Gadget,sans-serif",
+        "fontSize": "20",
+        "color": "#10387a",
+        "className": "",
+        "x": 880,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "1fe6da401c977e3b",
+        "type": "function",
+        "z": "e1ac1f3acef1c292",
+        "name": "RPM + Estado",
+        "func": "// generar un numero entero random entre mix y max\nfunction genRndInt(min, max) { \n    return Math.floor(Math.random() * (max - min + 1) + min);\n}\n\n\n// genero una RPM random\nlet rpm = genRndInt(1500, 1800)\n\nif (msg.payload){\n    msg.payload = {\n        bomba_estado: true,\n        bomba_rpm: rpm\n    };\n}\nelse{\n    msg.payload = {\n        bomba_estado: false,\n        bomba_rpm: 0\n    };\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 200,
+        "wires": [
+            [
+                "736c3ef3cdfef2ea",
+                "65981016c223274c"
+            ]
+        ]
+    },
+    {
+        "id": "736c3ef3cdfef2ea",
+        "type": "change",
+        "z": "e1ac1f3acef1c292",
+        "name": "bomba_estado",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.bomba_estado",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 160,
+        "wires": [
+            [
+                "dc59acc05ae7f704"
+            ]
+        ]
+    },
+    {
+        "id": "65981016c223274c",
+        "type": "change",
+        "z": "e1ac1f3acef1c292",
+        "name": "bomba_rpm",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.bomba_rpm",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 260,
+        "wires": [
+            [
+                "7e405a71d9dd9e02"
+            ]
+        ]
+    }
+]
